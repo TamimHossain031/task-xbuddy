@@ -107,7 +107,7 @@
 }
 .item.active .icon{
     background:#362323;
-    animation:fadeIn 0.5s ease;
+    transition:all 1s ease;
 }
 .item.active .icon > i{
     color:#F7F0EA;

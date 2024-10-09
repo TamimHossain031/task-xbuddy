@@ -25,7 +25,7 @@ items.forEach((item,index) =>{
                 image.src = data ;
                 bg_image.src = data ;
               
-            },200);
+            },300);
         }else{
            
          
