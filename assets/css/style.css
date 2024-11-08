@@ -16,14 +16,13 @@
     left:0;
     width:100%;
     height:100%;
-   
+    
 }
-.bg-image img{
-    width:100%;
-    height:100%;    
-    object-fit:cover;
-    transition:all 1s ease;
+
+.get-Image{
+    display:none;
 }
+
 
 .box{
     width: 840px;
@@ -104,6 +103,11 @@
 }
 .active{
     animation:fadeIn 1s ease;
+    opacity:1;
+   
+}
+.fadeOut{
+    animation:fadeOut 1s ease;
    
 }
 .item.active .icon{
@@ -118,13 +122,21 @@
     border-radius:10px;
  
 }
-.image-holder{
+.image-holder
+{
     width:100%;
     height:100%;
     object-fit:cover;
     border-radius:10px;
     transition:all 1s ease;
-   
+    opacity:0;
+}
+.bg-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:10px;
+    transition:all 1s ease;
 }
 
 @keyframes fadeIn{
@@ -133,5 +145,14 @@
     }
     100%{
         opacity:1
+    }
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity:0.5
     }
 }
