@@ -1,12 +1,18 @@
 const items = document.querySelectorAll('.item');
 const image = document.querySelector('.image-holder');
 const outer = document.querySelector('.outer');
-const bg_image = document.querySelector('.bg-image img');
+const bg_img = document.querySelector('.bg-img')
 const hoverBg = document.querySelector('.hover-bg');
 const box = document.querySelector('.box');
+const allImages = document.querySelectorAll('.get-Image');
+
+const allImagesSrc = Array.from(allImages).map(single=> single.src);
+
+
+
 let time;
 let dataAll;
-const images = ['image1.jpg','image2.jpg','image3.jpg','image4.jpg']
+
 items.forEach((item,index) =>{
     const newHover = document.createElement('div');
     newHover.classList.add('hovered');
@@ -14,21 +20,23 @@ items.forEach((item,index) =>{
     newHover.addEventListener('mouseover',function(e){               
       document.querySelectorAll('.active').forEach(single => single.classList.remove('active'))                 
        
-        const data = `./assets/img/${images[index]}`;
+        const data = allImagesSrc[index];       
         hoverBg.style.top = `${index * 80}px`;     
       
         if(!item.classList.contains('active')){ 
             clearTimeout(time);
             item.classList.add('active');
-            image.classList.add('active');
+            image.classList.remove('active');
+            bg_img.classList.remove('active')
             time = setTimeout(()=>{            
                 image.src = data ;
-                bg_image.src = data ;
-              
+                bg_img.src = data;
+                bg_img.classList.add('active')
+                image.classList.add('active');
+               
             },200);
         }else{
-           
-         
+            
         }      
         
     },true) 
